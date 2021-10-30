@@ -15,8 +15,7 @@ Lotide is a copy of [Lodash](https://github.com/lodash/lodash) which is a modern
 * countLetters => (string) => returns a count of each of the letters in that sentence
 * letterPositions => (string) => returns all the indices (zero-based positions) in the string where each character is found
 * findKeyByValue => (object, value) => scans the object and returns the first key which contains the given value
-* eqObjects => (object1, object2) => compares primitive and array values. Returns true if both objects are equal; otherwise, returns false. **This function is still under construction. Ability to compare objects will be implemented in the future**
+* eqObjects => (object1, object2) => compares primitive, array and objects. Returns true if both objects are equal; otherwise, returns false. This is a recursive function
 * assertObjectsEqual => (object1, object2) => compares two objects and returns an assertion message
 * takeUntil => (array, callback) => returns a slice of the array with elements taken from the beginning until the callback returns a truthy value
 * findKey => (object, callback) => scans the object and returns the first key for which the callback returns a truthy value
-

@@ -26,8 +26,14 @@ const eqObjects = function(object1, object2) {
   //loop through each key in object1
   for (const key of objOneKey) {
     //call eqArrays if this key holds an array for its value
-    if (Array.isArray(object1[key])) {
+    if (Array.isArray(object1[key]) === true) {
       if (!eqArrays(object1[key], object2[key])) {
+        return false;
+      }
+    } else if (typeof(object1[key]) === 'object') {
+      //if we have a nested object, recursively call eqObject
+      //if the recursive function returns false, we want to capture this upon return
+      if (eqObjects(object1[key], object2[key]) === false) {
         return false;
       }
     } else {
@@ -44,7 +50,7 @@ const ba = { b: "2", a: "1" };
 assertEqual(eqObjects(ab, ba), true); // => true
 const abc = { a: "1", b: "2", c: "3" };
 assertEqual(eqObjects(ab, abc), false); // => false
-
+/*  */
 const cd = { c: "1", d: ["2", 3] };
 const dc = { d: ["2", 3], c: "1" };
 assertEqual(eqObjects(cd, dc), true); // => true
@@ -56,3 +62,7 @@ const ddc = { d: ["2", 3], c: ["1"] };
 assertEqual(eqObjects(cdd, ddc), false); // => false
 const cdd2 = { c: "1", d: 2 };
 assertEqual(eqObjects(cdd, cdd2), false); // => false
+
+assertEqual(eqObjects({ a: { z: 1, x: {o: 3} }, b: 2 }, { a: { z: 1, x: {o: 3} }, b: 2 }), true); // => true
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
