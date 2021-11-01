@@ -1,6 +1,3 @@
-//import function for assertion
-const assertEqual = require('./assertEqual');
-
 const tail = function(array) {
   //create a new array
   let tailArr = [];

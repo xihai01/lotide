@@ -1,6 +1,3 @@
-//import function used for assertion
-const assertEqual = require('./assertEqual');
-
 //function returns true if both arrays are equal in length, value and type
 const eqArrays = function(arr1, arr2) {
   //check both arrays are the same type
