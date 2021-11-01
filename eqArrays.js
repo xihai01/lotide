@@ -1,7 +1,5 @@
-//function implementation
-const assertEqual = function(actual, expected) {
-  return actual === expected ? `🟩🟩🟩 Assertion Passed: ${actual} === ${expected}` : `🟥🟥🟥 Assertion Failed: ${actual} !== ${expected}`;
-};
+//import function used for assertion
+const assertEqual = require('./assertEqual');
 
 //function returns true if both arrays are equal in length, value and type
 const eqArrays = function(arr1, arr2) {
@@ -23,20 +21,5 @@ const eqArrays = function(arr1, arr2) {
   return true;
 };
 
-//test cases
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true));
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 1, 3]), false));
-console.log(assertEqual(eqArrays([1, 2], [1, 2, 3]), false));
-console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3, -4]), false));
-console.log(assertEqual(eqArrays(['a', 'b', 'c'], ['a', 'b', 'c']), true));
-console.log(assertEqual(eqArrays([1, '2', 3], [1, '2', 3]), true));
-console.log(assertEqual(eqArrays([1, 2, 3], []), false));
-console.log(assertEqual(eqArrays([], [1, 2, 3]), false));
-console.log(assertEqual(eqArrays([], []), true));
-
-//nested arrays
-console.log(assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true)); //true
-console.log(assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false)); //false
-console.log(assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false)); //false
-console.log(assertEqual(eqArrays([[2, [3, 4]], [4, 5], 'hi'], [[2, [3, 4]], [4, 5], 'hi']), true)); //true
-console.log(assertEqual(eqArrays([[2, 3], [[4]]], [[2, 3], [[4]]]), false)); //false
+//export function
+module.exports = eqArrays;
