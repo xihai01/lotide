@@ -54,3 +54,6 @@ const result4 = map(obj, x => {
   return x.name;
 });
 console.log(result4);
+
+//export function
+module.exports = map;

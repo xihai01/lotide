@@ -60,3 +60,6 @@ assertEqual(findKey({
   "Ora":       { },
   "Akelarre":  { }
 }, x => x.stars === 3), undefined);
+
+//export function
+module.exports = findKey;

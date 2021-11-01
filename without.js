@@ -50,3 +50,6 @@ assertArraysEqual(without(['1', '2', '3'], []), ['1', '2', '3']); //arr2 is empt
 assertArraysEqual(without([], [1, 2, '3']), []); //arr1 is empty => return empty array
 assertArraysEqual(without(['1', 2, '3'], [1, 2, '3']), ['1']);
 assertArraysEqual(without(['1', '2', '3', 3, 3, 3], [3]), ['1', '2', '3']);
+
+//export modules
+module.exports = without;

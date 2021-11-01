@@ -57,3 +57,6 @@ const ddc = { d: ["2", 3], c: ["1"] };
 assertObjectsEqual(cdd, ddc); // => false
 const cdd2 = { c: "1", d: 2 };
 assertObjectsEqual(cdd, cdd2); // => false
+
+//export function
+module.exports = assertObjectsEqual;

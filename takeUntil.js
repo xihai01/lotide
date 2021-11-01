@@ -36,3 +36,6 @@ console.log(results2);
 ---
 [ 'I\'ve', 'been', 'to', 'Hollywood' ]
 */
+
+//export function
+module.exports = takeUntil;

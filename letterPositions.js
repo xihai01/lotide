@@ -62,3 +62,6 @@ for (const key in expected) {
     assertArraysEqual(result[key], expected[key]);
   }
 }
+
+//export function
+module.exports = letterPositions;
