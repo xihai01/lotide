@@ -1,3 +1,4 @@
+//this function slices off the first element and returns the rest
 const tail = function(array) {
   //create a new array
   let tailArr = [];

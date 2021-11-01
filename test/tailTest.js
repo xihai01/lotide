@@ -1,23 +1,26 @@
-//import functions for tests
-const assertEqual = require('../assertEqual');
+//import functions for test
+const assert = require('chai').assert;
 const tail = require('../tail');
 
-/**test cases**/
-//string array
-let result = tail(['Hello', 'Lighthouse', 'Labs']);
-assertEqual(result.length, 2);
-assertEqual(result[0], 'Lighthouse');
-assertEqual(result[1], 'Labs');
-//number array
-result = tail([1, 3, 4]);
-assertEqual(result.length, 2);
-assertEqual(result[0], 3);
-assertEqual(result[1], 4);
-//one element array
-result = tail([8]);
-assertEqual(result.length, 0);
-assertEqual(result[0], undefined);
-//empty array
-result = tail([]);
-assertEqual(result.length, 0);
-assertEqual(result[0], undefined);
+describe('#tail', () => {
+  it('returns an empty array for []', () => {
+    const actual = tail([]);
+    const expected = [];
+    assert.deepEqual(actual, expected);
+  });
+  it('returns an empty array for [8]', () => {
+    const actual = tail([8]);
+    const expected = [];
+    assert.deepEqual(actual, expected);
+  });
+  it('returns [3, 4] for [1, 3, 4]', () => {
+    const actual = tail([1, 3, 4]);
+    const expected = [3, 4];
+    assert.deepEqual(actual, expected);
+  });
+  it('returns ["L", "H"] for ["O", "L", "H"]', () => {
+    const actual = tail(['O', 'L', 'H']);
+    const expected = ['L', 'H'];
+    assert.deepEqual(actual, expected);
+  });
+});
