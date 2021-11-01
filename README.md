@@ -1,7 +1,25 @@
 # Lotide Library (In progress)
+A mini clone of the beloved Lodash library.
+## Disclaimer
+**_BEWARE:_ This library was published for learning purposes. It is _not_ intended for use in production-grade software** 
 ## About
 Lotide is a copy of [Lodash](https://github.com/lodash/lodash) which is a modern JavaScript utility library delivering functions that makes working with arrays, strings, numbers, objects etc.. easier.
+## Usage
+**Install it:**
+
+`npm install @keqingthethundercat/lotide`
+
+**Require it:**
+
+`const _ = require('@keqingthethundercat/lotide');`
+
+**Call it:**
+
+`const results = _.tail([1, 2, 3]) // => [2, 3]`
+
 ## Documentation
+The following functions are currently implemented:
+
 *function => (inputs) => outputs*
 * assertEqual => (actual, expected) => true/false string comparisons
 * head => (array) => returns first element in array
