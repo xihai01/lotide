@@ -2,12 +2,6 @@
 const assert = require('chai').assert;
 const eqArrays = require('../eqArrays');
 
-//test cases
-/* 
-
-//nested array
-assertEqual(eqArrays([[2, 3], [[4]]], [[2, 3], [[4, [3]]]]), false); //false */
-
 describe('#eqArrays', () => {
   it('returns true for [1, 2, 3] and [1, 2, 3]', () => {
     const actual = eqArrays([1, 2, 3], [1, 2, 3]);
@@ -66,7 +60,3 @@ describe('#eqArrays', () => {
     assert.isFalse(actual, 'arrays are expected to be different');
   });
 });
-
-/* assertEqual(eqArrays([1, 2, 3], []), false);
-assertEqual(eqArrays([], [1, 2, 3]), false);
-assertEqual(eqArrays([], []), true); */
