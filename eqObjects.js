@@ -1,20 +1,4 @@
-//function implementation
-const assertEqual = function(actual, expected) {
-  actual === expected ? console.log(`🟩🟩🟩 Assertion Passed: ${actual} === ${expected}`) : console.log(`🟥🟥🟥 Assertion Failed: ${actual} !== ${expected}`);
-};
-
-//function returns true if both arrays are equal in length, value and type
-const eqArrays = function(arr1, arr2) {
-  //arr1 is not equal to arr2 if both arrays have different lengths
-  if (arr1.length !== arr2.length) return false;
-  //loop through each element of both arrays
-  for (let i = 0; i < arr1.length; i++) {
-    //return false immediately once different elements are detected
-    if (arr1[i] !== arr2[i]) return false;
-  }
-  //both arrays are equal, return true
-  return true;
-};
+const eqArrays = require('./eqArrays');
 
 const eqObjects = function(object1, object2) {
   //step 1: check for primitive values
@@ -43,29 +27,6 @@ const eqObjects = function(object1, object2) {
   }
   return true;
 };
-
-//test cases
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-assertEqual(eqObjects(ab, ba), true); // => true
-const abc = { a: "1", b: "2", c: "3" };
-assertEqual(eqObjects(ab, abc), false); // => false
-/*  */
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc), true); // => true
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2), false); // => false
-
-const cdd = { c: "1", d: ["2", 3] };
-const ddc = { d: ["2", 3], c: ["1"] };
-assertEqual(eqObjects(cdd, ddc), false); // => false
-const cdd2 = { c: "1", d: 2 };
-assertEqual(eqObjects(cdd, cdd2), false); // => false
-
-assertEqual(eqObjects({ a: { z: 1, x: {o: 3} }, b: 2 }, { a: { z: 1, x: {o: 3} }, b: 2 }), true); // => true
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => false
 
 //export function
 module.exports = eqObjects;
