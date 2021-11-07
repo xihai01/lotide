@@ -1,18 +1,16 @@
-//this function 'flattens; an muti-dimensional array and returns a single array of all values
+//this function "flattens" an muti-dimensional array and returns a single array of all values
 const flatten = function(array) {
   //create a new array to hold output
   let output = [];
-  //loop through each element in array
+  //push and return element if not array type
+  if (!Array.isArray(array)) {
+    output.push(array);
+    return output;
+  }
+  //loop through each element in array to check for nested arrays
   for (const elm of array) {
-    //if the element is another array, loop through inner array and push the numbers to output
-    if (Array.isArray(elm)) {
-      for (const innerElm of elm) {
-        output.push(innerElm);
-      }
-    } else {
-      //otherwise, push the element to output
-      output.push(elm);
-    }
+    //concat the array returned from recursive call 
+    output = output.concat(flatten(elm));
   }
   return output;
 };
