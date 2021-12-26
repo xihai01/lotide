@@ -1,7 +1,7 @@
 # Lotide Library (In progress)
 A mini clone of the beloved Lodash library.
 ## Disclaimer
-**_BEWARE:_ This library was published for learning purposes. It is _not_ intended for use in production-grade software** 
+**_BEWARE:_ This library was published for learning purposes. It is _not_ intended for use in production-grade software**
 ## About
 Lotide is a copy of [Lodash](https://github.com/lodash/lodash) which is a modern JavaScript utility library delivering functions that makes working with arrays, strings, numbers, objects etc.. easier.
 ## Usage
@@ -38,3 +38,4 @@ The following functions are currently implemented:
 * assertObjectsEqual => (object1, object2) => compares two objects and returns an assertion message
 * takeUntil => (array, callback) => returns a slice of the array with elements taken from the beginning until the callback returns a truthy value
 * findKey => (object, callback) => scans the object and returns the first key for which the callback returns a truthy value
+* quickSort => (array, startIndex, endIndex) => a quick sort implementation that sorts an array in place
